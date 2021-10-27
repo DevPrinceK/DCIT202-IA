@@ -1,16 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+// Custom import
+import Header from 'components/header'
 
-export default function App() {
+
+
+// Using ES6 (Arrow Functional Component)
+const App = () => {
+  // The master App components: Renders all other components
   return (
-    <View style={styles.container}>
-      <Text>HELLO DCIT202 CLASS!</Text>
-      <StatusBar style="auto" />
+    <View>
+      {/* Header */}
+      <Header />
+
+      {/* Homepage */}
+    
+    
     </View>
-  );
+  )
 }
 
+
+// Styling
 const styles = StyleSheet.create({
   container: {
     flex: 1,

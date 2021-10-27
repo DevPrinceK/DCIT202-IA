@@ -11,15 +11,9 @@ const Header = () => {
 }
 
 export default Header;
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>HELLO DCIT202 CLASS!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
 
+
+// Styling
 const styles = StyleSheet.create({
   container: {
     flex: 1,
