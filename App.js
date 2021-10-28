@@ -5,7 +5,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import Header from 'components/header'
 
 
-
 // Using ES6 (Arrow Functional Component)
 const App = () => {
   // The master App components: Renders all other components
