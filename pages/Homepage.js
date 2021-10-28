@@ -11,7 +11,10 @@ const Home = () => {
 
 
            {/* Scrollable */}
-            <ScrollView horizontal={true} >
+            <ScrollView 
+            horizontal={true} 
+            showsHorizontalScrollIndicator={false}
+            >
               <Vscroll 
                 imgLink={require('../assets/images/itemOne.jpg')}
                 imgText='Item One'
