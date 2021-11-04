@@ -61,7 +61,7 @@ const HomeScreen = ({navigation}) => {
               <Icon
                 name="favorite"
                 size={18}
-                color={plant.like ? COLORS.red : COLORS.black}
+                color={plant.like ? COLORS.red : COLORS.dark}
               />
             </View>
           </View>
@@ -115,7 +115,7 @@ const HomeScreen = ({navigation}) => {
         <View>
           <Text style={{fontSize: 25, fontWeight: 'bold'}}>Welcome to</Text>
           <Text style={{fontSize: 38, color: COLORS.green, fontWeight: 'bold'}}>
-            Plant Shop
+            BuyMe Store
           </Text>
         </View>
         <Icon name="shopping-cart" size={28} />

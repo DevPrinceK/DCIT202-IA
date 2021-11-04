@@ -1,13 +1,13 @@
 // import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-// import {createStackNavigator} from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import { createStackNavigator } from 'react-navigation-stack';
+// import { createNativeStackNavigator } from 'react-navigation-stack';
 
-createStackNavigator(RouteConfigs, StackNavigatorConfig);
+// createStackNavigator(RouteConfigs, StackNavigatorConfig);
 // creating an instance of the stack navigator
-const Stack = createStackNavigator();
+
 
 // Custom imports
 import HomeScreen from './source/view/screens/HomeScreen';
@@ -17,6 +17,8 @@ import COLORS from './source/variables/colors';
 
 // Using arrow function to describe the main App component
 const App = () => {
+  // const Stack = createNativeStackNavigator();
+  const Stack = createStackNavigator();
   return (
     <NavigationContainer>
       <StatusBar barStyle="dark-content" backgroundColor={COLORS.white} />
