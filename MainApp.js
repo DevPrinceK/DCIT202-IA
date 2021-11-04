@@ -6,6 +6,10 @@ import Header from 'components/header'
 import Home from 'pages/Homepage'
 
 
+
+
+
+
 // Using ES6 (Arrow Functional Component)
 const App = () => {
   // The master App components: Renders all other components
