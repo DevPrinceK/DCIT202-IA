@@ -1,35 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
+// import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-// Custom import
-import Header from 'components/header'
-import Home from 'pages/Homepage'
+import {NavigationContainer} from '@react-navigation/native';
+// import {createStackNavigator} from '@react-navigation/stack';
 
+import { createStackNavigator } from 'react-navigation-stack';
 
-// Using ES6 (Arrow Functional Component)
+createStackNavigator(RouteConfigs, StackNavigatorConfig);
+// creating an instance of the stack navigator
+const Stack = createStackNavigator();
+
+// Custom imports
+import HomeScreen from './source/view/screens/HomeScreen';
+import DetailsSceeen from './source/view/screens/DetailsScreen';
+import {StatusBar} from 'react-native';
+import COLORS from './source/variables/colors';
+
+// Using arrow function to describe the main App component
 const App = () => {
-  // The master App components: Renders all other components
   return (
-    <View>
-      {/* Main App renders pages and implements navigations */}
+    <NavigationContainer>
+      <StatusBar barStyle="dark-content" backgroundColor={COLORS.white} />
+      <Stack.Navigator screenOptions={{header: () => null}}>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsSceeen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
-      {/* Homepage */}
-      <Home />
-
-      
-    
-    
-    </View>
-  )
-}
-
-
-// Styling
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
