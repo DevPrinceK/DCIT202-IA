@@ -23,6 +23,7 @@ const App = () => {
     <NavigationContainer>
       <StatusBar barStyle="dark-content" backgroundColor={COLORS.white} />
       <Stack.Navigator screenOptions={{header: () => null}}>
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsSceeen} />
       </Stack.Navigator>
