@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("./assets/log2.png")} />
+      {/* <Image style={styles.image} source={require("")} /> */}
 
       <StatusBar style="auto" />
       <View style={styles.inputView}>

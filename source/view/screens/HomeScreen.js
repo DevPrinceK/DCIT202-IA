@@ -17,7 +17,7 @@ const width = Dimensions.get('window').width / 2 - 30;
 const HomeScreen = ({navigation}) => {
   const [catergoryIndex, setCategoryIndex] = React.useState(0);
 
-  const categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
+  const categories = ['HP', 'TOSHIBA', 'DELL', 'LENOVO'];
 
   const CategoryList = () => {
     return (
@@ -108,17 +108,20 @@ const HomeScreen = ({navigation}) => {
       </TouchableOpacity>
     );
   };
+
+
   return (
     <SafeAreaView
       style={{flex: 1, paddingHorizontal: 20, backgroundColor: COLORS.white}}>
       <View style={style.header}>
+        
+        <Icon name="shopping-cart" size={28} />
         <View>
-          <Text style={{fontSize: 25, fontWeight: 'bold'}}>Welcome to</Text>
+          <Text style={{fontSize: 25, fontWeight: 'bold', flexDirection: 'flex-end'}}>Welcome to</Text>
           <Text style={{fontSize: 38, color: COLORS.green, fontWeight: 'bold'}}>
             BuyMe Store
           </Text>
         </View>
-        <Icon name="shopping-cart" size={28} />
       </View>
       <View style={{marginTop: 30, flexDirection: 'row'}}>
         <View style={style.searchContainer}>
