@@ -10,7 +10,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-// navigation stack
+// custom import
+import Logo from "./Logo"
 
 // App entry point
 export default function App({navigation}) {
@@ -20,6 +21,7 @@ export default function App({navigation}) {
 
   return (
     <View style={styles.container}>
+      <Logo title="BuyMeStore" />
       <Image style={styles.image} source={{uri: "https://i.pinimg.com/originals/33/b8/69/33b869f90619e81763dbf1fccc896d8d.jpg"}} />
 
       <StatusBar style="auto" />
