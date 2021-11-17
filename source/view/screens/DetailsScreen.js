@@ -106,7 +106,9 @@ const DetailsScreen = ({navigation, route}) => {
 
             <View style={style.buyBtn}>
               <Text
-                style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
+                style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}
+                onPress={() => navigatioin.navigate('Cart')}
+                >
                 Add to Cart
               </Text>
             </View>
