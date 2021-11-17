@@ -2,13 +2,12 @@ import React, {useState} from "react";
 import Lottie from "lottie-react-native";
 import {View, Text, StatusBar, FlatList, Image, ActivityIndicator,SafeAreaView,ScrollView } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-// import { useState } from "react";
 
-// import styles from '../../styles.js'
+// custom imports
 import COLORS from "../../variables/colors.js";
 
 const Cart = ({ navigation, route }) => {
-  const [cart, setCart] = useState([route.params.cart]);
+  const [cart, setCart] = useState([...route.params.cart]); // spreading the cart items
   const [loading, setLoading] = useState(false);
 
   let lottieRef = null;
@@ -36,7 +35,7 @@ const Cart = ({ navigation, route }) => {
         <View style={{ justifyContent: "center", alignItems: "center",paddingTop:'50%' }}>
          
           <Text style={{ fontSize: 18 }}>
-            Your Cart is Empty, Add Something
+            Your Cart is Empty!
           </Text>
         </View>
       ) : (

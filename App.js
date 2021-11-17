@@ -15,7 +15,6 @@ import COLORS from './source/variables/colors';
 
 // Using arrow function to describe the main App component
 const App = () => {
-  // const Stack = createNativeStackNavigator();
   const Stack = createStackNavigator();
   return (
     <NavigationContainer>

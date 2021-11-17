@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 15,
     borderRadius: 100 / 2,
+    // transform: [{ rotate: "45deg" }],
   },
 
   text: {
