@@ -67,7 +67,7 @@ const HomeScreen = ({navigation}) => {
               <Icon
                 name="favorite"
                 size={18}
-                color={product.like ? COLORS.red : COLORS.dark}
+                color={product.like ? COLORS.blue : COLORS.dark}
               />
             </View>
           </View>
@@ -100,13 +100,13 @@ const HomeScreen = ({navigation}) => {
               style={{
                 height: 25,
                 width: 25,
-                backgroundColor: COLORS.green,
+                backgroundColor: COLORS.blue,
                 borderRadius: 5,
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
               <Text
-                style={{fontSize: 22, color: COLORS.white, fontWeight: 'bold'}}>
+                style={{fontSize: 22, color: COLORS.white, fontWeight: 'bold',}}>
                 +
               </Text>
             </View>
@@ -118,23 +118,27 @@ const HomeScreen = ({navigation}) => {
 
 
   return (
-    //
+    <View> 
+    {/* header component */}
+      <View>
+        <Header title="BlueTechStore" /> 
+      </View>
+
+    {/* main body */}
     <SafeAreaView
       style={{flex: 1, paddingHorizontal: 20, backgroundColor: COLORS.white}}>
-      <View>
-      <Header title="BuyMeStore" /> 
-    </View>
-    {/* after header */}
+
       <View style={style.header}>
         
-        <Icon name="shopping-cart" size={28} />
+        <Icon name="shopping-cart" size={28} style={{color: COLORS.blue}} />
         <View>
-          <Text style={{fontSize: 25, fontWeight: 'bold', flexDirection: 'flex-end'}}>Welcome to</Text>
-          <Text style={{fontSize: 38, color: COLORS.green, fontWeight: 'bold'}}>
-            BuyMe Store
+          <Text style={{fontSize: 25, fontWeight: 'bold', flexDirection: 'flex-end', color: COLORS.blue, }}>Welcome to</Text>
+          <Text style={{fontSize: 38, color: COLORS.blue, fontWeight: 'bold'}}>
+            BlueTech Store
           </Text>
         </View>
       </View>
+
       <View style={{marginTop: 30, flexDirection: 'row'}}>
         <View style={style.searchContainer}>
           <Icon name="search" size={25} style={{marginLeft: 20}} />
@@ -159,6 +163,7 @@ const HomeScreen = ({navigation}) => {
         }}
       />
     </SafeAreaView>
+    </View>
   );
 };
 
@@ -169,12 +174,16 @@ const style = StyleSheet.create({
     marginBottom: 20,
     justifyContent: 'space-between',
   },
-  categoryText: {fontSize: 16, color: 'grey', fontWeight: 'bold'},
+  categoryText: {
+    fontSize: 16, 
+    color: COLORS.blue, 
+    fontWeight: 'bold',
+    },
   categoryTextSelected: {
     color: COLORS.green,
     paddingBottom: 5,
     borderBottomWidth: 2,
-    borderColor: COLORS.green,
+    borderColor: COLORS.blue,
   },
   card: {
     height: 225,
@@ -209,7 +218,7 @@ const style = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 10,
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.blue,
     justifyContent: 'center',
     alignItems: 'center',
   },
