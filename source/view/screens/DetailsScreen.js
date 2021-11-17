@@ -1,10 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, SafeAreaView, Image, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../variables/colors';
 
+
 const DetailsScreen = ({navigation, route}) => {
-  const plant = route.params;
+  const [numOfProd, setNumOfProduct] = useState(1);
+  // const [count, setCount] = useState(0);
+
+  // to increase the number of product to buy
+   const increment = () => {
+    setNumOfProduct(numOfProd + 1);
+  }
+
+  // decrease the number of product to buy
+  const decrement = () => {
+    setNumOfProduct(numOfProd - 1);
+  }
+
+  //  
+  const product = route.params;
 
   return (
     <SafeAreaView
@@ -17,7 +32,7 @@ const DetailsScreen = ({navigation, route}) => {
         <Icon name="shopping-cart" size={28} />
       </View>
       <View style={style.imageContainer}>
-        <Image source={plant.img} style={{resizeMode: 'contain', flex: 1}} />
+        <Image source={product.img} style={{resizeMode: 'contain', flex: 1}} />
       </View>
       <View style={style.detailsContainer}>
         <View
@@ -37,7 +52,7 @@ const DetailsScreen = ({navigation, route}) => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 22, fontWeight: 'bold'}}>{plant.name}</Text>
+          <Text style={{fontSize: 22, fontWeight: 'bold'}}>{product.name}</Text>
           <View style={style.priceTag}>
             <Text
               style={{
@@ -46,7 +61,7 @@ const DetailsScreen = ({navigation, route}) => {
                 fontWeight: 'bold',
                 fontSize: 16,
               }}>
-              ${plant.price}
+              ${product.price}
             </Text>
           </View>
         </View>
@@ -59,7 +74,7 @@ const DetailsScreen = ({navigation, route}) => {
               lineHeight: 22,
               marginTop: 10,
             }}>
-            {plant.about}
+            {product.about}
           </Text>
           <View
             style={{
@@ -73,7 +88,7 @@ const DetailsScreen = ({navigation, route}) => {
                 alignItems: 'center',
               }}>
               <View style={style.borderBtn}>
-                <Text style={style.borderBtnText}>-</Text>
+                <Text style={style.borderBtnText} onPress={() => numOfProd > 0 ? setNumOfProduct(numOfProd - 1): setNumOfProduct(0)} >-</Text>
               </View>
               <Text
                 style={{
@@ -81,10 +96,10 @@ const DetailsScreen = ({navigation, route}) => {
                   marginHorizontal: 10,
                   fontWeight: 'bold',
                 }}>
-                1
+                {numOfProd}
               </Text>
               <View style={style.borderBtn}>
-                <Text style={style.borderBtnText}>+</Text>
+                <Text style={style.borderBtnText} onPress={() => setNumOfProduct(numOfProd + 1) } >+</Text>
               </View>
             </View>
 
