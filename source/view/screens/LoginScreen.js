@@ -13,14 +13,14 @@ import {
 // navigation stack
 
 // App entry point
-export default function App() {
+export default function App({navigation}) {
 // useStates to keep track of user entry in the attempt to login
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
     <View style={styles.container}>
-      {/* <Image style={styles.image} source={require("")} /> */}
+      <Image style={styles.image} source={{uri: "https://i.pinimg.com/originals/33/b8/69/33b869f90619e81763dbf1fccc896d8d.jpg"}} />
 
       <StatusBar style="auto" />
       <View style={styles.inputView}>
@@ -46,7 +46,7 @@ export default function App() {
         <Text style={styles.forgot_button}>Forgot Password?</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.loginBtn}>
+      <TouchableOpacity style={styles.loginBtn} onPress={() => {navigation.navigate('Home')}} >
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
     </View>
