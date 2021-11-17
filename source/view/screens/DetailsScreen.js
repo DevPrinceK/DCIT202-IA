@@ -32,7 +32,8 @@ const DetailsScreen = ({navigation, route}) => {
         <Icon name="shopping-cart" size={28} />
       </View>
       <View style={style.imageContainer}>
-        <Image source={product.img} style={{resizeMode: 'contain', flex: 1}} />
+        {/* <Image source={product.img} style={{resizeMode: 'contain', flex: 1}} /> */}
+        <Image source={{uri: product.img}} style={{resizeMode: 'contain', flex: 1}} />
       </View>
       <View style={style.detailsContainer}>
         <View
@@ -106,7 +107,7 @@ const DetailsScreen = ({navigation, route}) => {
             <View style={style.buyBtn}>
               <Text
                 style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-                Buy
+                Add to Cart
               </Text>
             </View>
           </View>
