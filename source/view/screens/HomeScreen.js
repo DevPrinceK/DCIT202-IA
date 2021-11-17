@@ -40,11 +40,11 @@ const HomeScreen = ({navigation}) => {
     );
   };
 
-  const Card = ({plant}) => {
+  const Card = ({product}) => {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={() => navigation.navigate('Details', plant)}>
+        onPress={() => navigation.navigate('Details', product)}>
         <View style={style.card}>
           <View style={{alignItems: 'flex-end'}}>
             <View
@@ -54,14 +54,14 @@ const HomeScreen = ({navigation}) => {
                 borderRadius: 20,
                 justifyContent: 'center',
                 alignItems: 'center',
-                backgroundColor: plant.like
+                backgroundColor: product.like
                   ? 'rgba(245, 42, 42,0.2)'
                   : 'rgba(0,0,0,0.2) ',
               }}>
               <Icon
                 name="favorite"
                 size={18}
-                color={plant.like ? COLORS.red : COLORS.dark}
+                color={product.like ? COLORS.red : COLORS.dark}
               />
             </View>
           </View>
@@ -72,13 +72,14 @@ const HomeScreen = ({navigation}) => {
               alignItems: 'center',
             }}>
             <Image
-              source={plant.img}
+              // source={product.img}
+              source={{uri: product.img}} style={{resizeMode: 'contain', flex: 1}}
               style={{flex: 1, resizeMode: 'contain'}}
             />
           </View>
 
           <Text style={{fontWeight: 'bold', fontSize: 17, marginTop: 10}}>
-            {plant.name}
+            {product.name}
           </Text>
           <View
             style={{
@@ -87,7 +88,7 @@ const HomeScreen = ({navigation}) => {
               marginTop: 5,
             }}>
             <Text style={{fontSize: 19, fontWeight: 'bold'}}>
-              ${plant.price}
+              ${product.price}
             </Text>
             <View
               style={{
@@ -143,7 +144,7 @@ const HomeScreen = ({navigation}) => {
         numColumns={2}
         data={products}
         renderItem={({item}) => {
-          return <Card plant={item} />;
+          return <Card product={item} />;
         }}
       />
     </SafeAreaView>
