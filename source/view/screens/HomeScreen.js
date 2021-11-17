@@ -11,7 +11,7 @@ import {
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../variables/colors';
-import plants from '../../variables/plants';
+import products from '../../variables/products';
 const width = Dimensions.get('window').width / 2 - 30;
 
 const HomeScreen = ({navigation}) => {
@@ -141,7 +141,7 @@ const HomeScreen = ({navigation}) => {
           paddingBottom: 50,
         }}
         numColumns={2}
-        data={plants}
+        data={products}
         renderItem={({item}) => {
           return <Card plant={item} />;
         }}
