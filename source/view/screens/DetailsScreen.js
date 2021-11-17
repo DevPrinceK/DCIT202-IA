@@ -28,8 +28,8 @@ const DetailsScreen = ({navigation, route}) => {
         backgroundColor: COLORS.white,
       }}>
       <View style={style.header}>
-        <Icon name="arrow-back" size={28} onPress={() => navigation.goBack()} />
-        <Icon name="shopping-cart" size={28} />
+        <Icon name="arrow-back" style={{color: COLORS.blue}} size={28} onPress={() => navigation.goBack()} />
+        <Icon name="shopping-cart" style={{color: COLORS.blue}} size={28} />
       </View>
       <View style={style.imageContainer}>
         {/* <Image source={product.img} style={{resizeMode: 'contain', flex: 1}} /> */}
@@ -43,7 +43,7 @@ const DetailsScreen = ({navigation, route}) => {
             alignItems: 'flex-end',
           }}>
           <View style={style.line} />
-          <Text style={{fontSize: 18, fontWeight: 'bold'}}>Read all about it!</Text>
+          <Text style={{fontSize: 18, fontWeight: 'bold', color: COLORS.blue}}>Read all about it!</Text>
         </View>
         <View
           style={{
@@ -159,13 +159,13 @@ const style = StyleSheet.create({
   buyBtn: {
     width: 130,
     height: 50,
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.blue,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
   },
   priceTag: {
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.blue,
     width: 80,
     height: 40,
     justifyContent: 'center',
