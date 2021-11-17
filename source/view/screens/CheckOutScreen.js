@@ -104,6 +104,8 @@ function Checkout({navigation}) {
     );
 }
 
+// export default CheckOut;
+
 const styles= StyleSheet.create({
     categories:{
         flexDirection:'row',

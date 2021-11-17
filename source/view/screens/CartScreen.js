@@ -1,15 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import Lottie from "lottie-react-native";
 import {View, Text, StatusBar, FlatList, Image, ActivityIndicator,SafeAreaView,ScrollView } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { useState } from "react";
+// import { useState } from "react";
 
-import styles from './styles.js'
-import COLORS from "../../consts/colors.js";
+// import styles from '../../styles.js'
+import COLORS from "../../variables/colors.js";
 
 const Cart = ({ navigation, route }) => {
-  const [cart, setCart] = React.useState([...route.params.cart]);
-  const [loading, setLoading] = React.useState(false);
+  const [cart, setCart] = useState([route.params.cart]);
+  const [loading, setLoading] = useState(false);
 
   let lottieRef = null;
 
@@ -34,11 +34,7 @@ const Cart = ({ navigation, route }) => {
 
       {route.params.cart.length == 0 ? (
         <View style={{ justifyContent: "center", alignItems: "center",paddingTop:'50%' }}>
-          {/* <Lottie
-            ref={(lottie) => (lottieRef = lottie)}
-            style={{ height: 200, width: 200 }}
-            source={require("../screens/4495-shopping-basket.json")}
-          /> */}
+         
           <Text style={{ fontSize: 18 }}>
             Your Cart is Empty, Add Something
           </Text>

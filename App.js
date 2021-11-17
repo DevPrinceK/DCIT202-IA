@@ -3,16 +3,13 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-// import { createNativeStackNavigator } from 'react-navigation-stack';
-
-// createStackNavigator(RouteConfigs, StackNavigatorConfig);
-// creating an instance of the stack navigator
-
 
 // Custom imports
 import HomeScreen from './source/view/screens/HomeScreen';
-import DetailsSceeen from './source/view/screens/DetailsScreen';
+import DetailsScreen from './source/view/screens/DetailsScreen';
 import LoginScreen from './source/view/screens/LoginScreen';
+import Cart from './source/view/screens/CartScreen';
+import CheckOutScreen from './source/view/screens/CheckOutScreen';
 import {StatusBar} from 'react-native';
 import COLORS from './source/variables/colors';
 
@@ -26,9 +23,9 @@ const App = () => {
       <Stack.Navigator screenOptions={{header: () => null}}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsSceeen} />
-        <Stack.Screen name="Cart" component={CartSceeen} />
-        <Stack.Screen name="CheckOut" component={CheckOutSceeen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Cart" component={Cart} />
+        <Stack.Screen name="CheckOut" component={CheckOutScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
