@@ -43,7 +43,7 @@ const DetailsScreen = ({navigation, route}) => {
             alignItems: 'flex-end',
           }}>
           <View style={style.line} />
-          <Text style={{fontSize: 18, fontWeight: 'bold'}}>You made the right choice!</Text>
+          <Text style={{fontSize: 18, fontWeight: 'bold'}}>Read all about it!</Text>
         </View>
         <View
           style={{
