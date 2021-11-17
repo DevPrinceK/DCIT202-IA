@@ -10,8 +10,13 @@ import {
 } from 'react-native';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
+// custom imports
 import COLORS from '../../variables/colors';
 import products from '../../variables/products';
+import Header from './Header';
+
+
 const width = Dimensions.get('window').width / 2 - 30;
 
 const HomeScreen = ({navigation}) => {
@@ -55,6 +60,7 @@ const HomeScreen = ({navigation}) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 backgroundColor: product.like
+                  // ? 'rgba(245, 42, 42,0.2)'
                   ? 'rgba(245, 42, 42,0.2)'
                   : 'rgba(0,0,0,0.2) ',
               }}>
@@ -112,8 +118,13 @@ const HomeScreen = ({navigation}) => {
 
 
   return (
+    //
     <SafeAreaView
       style={{flex: 1, paddingHorizontal: 20, backgroundColor: COLORS.white}}>
+      <View>
+      <Header title="BuyMeStore" /> 
+    </View>
+    {/* after header */}
       <View style={style.header}>
         
         <Icon name="shopping-cart" size={28} />
@@ -127,7 +138,7 @@ const HomeScreen = ({navigation}) => {
       <View style={{marginTop: 30, flexDirection: 'row'}}>
         <View style={style.searchContainer}>
           <Icon name="search" size={25} style={{marginLeft: 20}} />
-          <TextInput placeholder="Search" style={style.input} />
+          <TextInput placeholder="Search item" style={style.input} />
         </View>
         <View style={style.sortBtn}>
           <Icon name="sort" size={30} color={COLORS.white} />
